@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #001f3f 0%, #000033 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.navbar {
+  background: rgba(0, 0, 51, 0.8);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  align-items: center;
+}
+
+/* 1. Shiny Dark Violet Button Styles (Replaces original navbar a styles) */
+.nav-button {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+
+  /* Button Styling */
+  padding: 0.5rem 1rem;
+  border-radius: 50px; /* More rounded for a 'shiny' look */
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block; /* Essential for padding */
+
+  /* Shiny Dark Violet Colour */
+  background: linear-gradient(145deg, #8a2be2, #4b0082); /* DarkViolet gradient */
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.7); /* Shiny glow effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+}
+
+.nav-button:hover {
+  /* Hover effect */
+  background: linear-gradient(145deg, #a750f5, #5f00a8);
+  box-shadow: 0 6px 20px rgba(167, 80, 245, 0.9);
+  transform: translateY(-2px);
+  color: #fff;
+}
+/* END of Shiny Dark Violet Button Styles */
+
+
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Ensure content is centered on the home page */
+}
+
+/* 3. Home Page Text Styling and Animation */
+.home-name, .home-profession {
+  color: #FFD700; /* Yellow/Gold colour */
+  text-transform: uppercase; /* Ensure capitals */
+  /* Animation properties */
+  opacity: 0; /* Start hidden */
+  transform: scale(0.1); /* Start very small (like a cursor dot) */
+  animation-fill-mode: forwards; /* Keep the end state of the animation */
+  will-change: transform, opacity; /* Optimisation hint */
+}
+
+.home-name {
+    font-size: 4rem;
+    font-weight: 700;
+    /* Apply specific animation */
+    animation: cursor-out-name 1.5s ease-out 1s forwards; /* 1s delay to simulate loading */
+}
+
+.home-profession {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    /* Apply specific animation, slightly delayed */
+    animation: cursor-out-profession 1.5s ease-out 1.5s forwards; /* 1.5s delay */
+}
+
+
+/* Keyframe Animation for Name */
+@keyframes cursor-out-name {
+    0% {
+        opacity: 0;
+        transform: scale(0.1) translateY(0); /* Start small and centered */
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) translateY(-10px); /* Slightly overshoot for a dynamic feel */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0); /* Settle at final size */
+    }
+}
+
+/* Keyframe Animation for Profession */
+@keyframes cursor-out-profession {
+    0% {
+        opacity: 0;
+        transform: scale(0.1) translateY(0); /* Start small and centered */
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) translateY(10px); /* Slightly overshoot in the opposite direction */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0); /* Settle at final size */
+    }
+}
+/* END of Home Page Text Styling and Animation */
+
+/* Original hero h1/p and fadeIn keyframes removed as they are superseded by new styles */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Skills Card Blending and Logo Placeholder Styles */
+.skill-card {
+  /* Subtle grey background that blends with the dark blue BG */
+  background: rgba(128, 128, 128, 0.1); /* 10% opaque grey */
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: none; /* Make it less noticeable */
+}
+
+.skill-logo-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.05); /* Very light grey/white box for logo */
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.logo-placeholder-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.skill-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(138, 43, 226, 0.5); /* Use a subtle dark violet glow on hover for consistency */
+}
+/* END of Skills Card Blending and Logo Placeholder Styles */
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+button {
+  background: #00bfff;
+  color: #001f3f;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #009acd;
+}
