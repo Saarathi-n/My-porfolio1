@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
     <section id="home" className="min-h-screen flex items-center justify-center">
       <div className="text-center max-w-3xl">
         <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4">
-          Hi, I'm <span className="text-cyan-400">Saarathi</span>
+          Hi, I'm <span className="text-cyan-400">Sneha</span>
         </h1>
         <p className="text-xl md:text-2xl text-slate-400 mb-8">
           A passionate Frontend React Engineer specializing in building beautiful, functional, and user-centric web applications.
